@@ -15,6 +15,8 @@ This repository contains my completed Level 1 web development tasks for the CODS
 
 A responsive portfolio website showcasing my skills, projects, and contact information.
 
+[Click here for live preview](https://shajafkhan.github.io/CODSOFT/Portfolio/)
+
 **Features:**
 - Responsive design
 - Contact form with validation
@@ -31,6 +33,8 @@ A responsive portfolio website showcasing my skills, projects, and contact infor
 
 A modern landing page for Nike brand with "Just Do It" theme.
 
+[Click here for live preview](https://shajafkhan.github.io/CODSOFT/Landing%20Page/)
+
 **Features:**
 - Responsive layout
 - Services showcase
@@ -46,6 +50,8 @@ A modern landing page for Nike brand with "Just Do It" theme.
 **Directory:** `Calculator/`
 
 A functional web calculator with modern design.
+
+[Click here for live preview](https://shajafkhan.github.io/CODSOFT/Calculator/)
 
 **Features:**
 - Basic arithmetic operations (+, -, ×, ÷)
