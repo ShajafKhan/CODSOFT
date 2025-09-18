@@ -1,4 +1,4 @@
-# CODSOFT Web Development Internship - Level 1 Tasks
+# Web Development Internship - Level 1 Tasks
 
 This repository contains my completed Level 1 web development tasks for the CODSOFT internship program.
 
