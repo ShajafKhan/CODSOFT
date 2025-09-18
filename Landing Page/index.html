@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike - Just Do It</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h2>NIKE</h2>
+            </div>
+
+
+            <nav class="nav" id="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+
+            <button class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Just Do It</h1>
+                <p>Unleash your potential with Nike's innovative sportswear and footwear</p>
+                <button class="cta-btn" onclick="scrollToSection('services')">Explore Our Services</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2>What We Offer</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Performance Shoes</h3>
+                    <p>High-quality athletic footwear for every sport</p>
+                </div>
+                <div class="service-card">
+                    <h3>Training Gear</h3>
+                    <p>Professional workout clothes and equipment</p>
+                </div>
+                <div class="service-card">
+                    <h3>Sports Apparel</h3>
+                    <p>Comfortable and stylish clothing for athletes</p>
+                </div>
+                <div class="service-card">
+                    <h3>Fitness Support</h3>
+                    <p>Expert advice and community for your fitness journey</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Nike</h2>
+            <p>Nike is a leading global brand in athletic footwear and apparel. Founded with the mission to bring
+                inspiration and innovation to every athlete in the world, we continue to push boundaries in sports
+                performance and style. Our "Just Do It" philosophy motivates people to overcome challenges and achieve
+                their goals, whether they're professional athletes or weekend warriors.</p>
+        </div>
+    </section>
+
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+            <div id="form-message"></div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Nike. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
