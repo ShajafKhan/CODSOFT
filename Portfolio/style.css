@@ -16,6 +16,7 @@ body {
     color: #333333;
     line-height: 1.5;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 img,
@@ -44,6 +45,7 @@ header {
     box-shadow: 0 6px 18px rgba(16, 24, 40, 0.04);
     border-bottom: 1px solid rgba(15, 23, 42, 0.04);
     z-index: 1200;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .header-content {
@@ -54,10 +56,118 @@ header {
     gap: 1rem;
 }
 
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .name {
     font-weight: 700;
     font-size: 1.3rem;
     color: #333333;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.themeToggle {
+    color: #3498db;
+    width: 1.7rem;
+    height: 1.7rem;
+    transition: color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.st-sunMoonThemeToggleBtn {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.st-sunMoonThemeToggleBtn .themeToggleInput {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    position: absolute;
+    cursor: pointer;
+}
+
+.st-sunMoonThemeToggleBtn svg {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease;
+    transform: rotate(40deg);
+}
+
+.st-sunMoonThemeToggleBtn svg .sunMoon {
+    transform-origin: center center;
+    transition: inherit;
+    transform: scale(1);
+}
+
+.st-sunMoonThemeToggleBtn svg .sunRay {
+    transform-origin: center center;
+    transform: scale(0);
+}
+
+.st-sunMoonThemeToggleBtn svg mask>circle {
+    transition: transform 0.64s cubic-bezier(0.41, 0.64, 0.32, 1.575);
+    transform: translate(0px, 0px);
+}
+
+.st-sunMoonThemeToggleBtn svg .sunRay2 {
+    animation-delay: 0.05s !important;
+}
+
+.st-sunMoonThemeToggleBtn svg .sunRay3 {
+    animation-delay: 0.1s !important;
+}
+
+.st-sunMoonThemeToggleBtn svg .sunRay4 {
+    animation-delay: 0.17s !important;
+}
+
+.st-sunMoonThemeToggleBtn svg .sunRay5 {
+    animation-delay: 0.25s !important;
+}
+
+.st-sunMoonThemeToggleBtn svg .sunRay6 {
+    animation-delay: 0.29s !important;
+}
+
+.st-sunMoonThemeToggleBtn .themeToggleInput:checked+svg {
+    transform: rotate(90deg);
+}
+
+.st-sunMoonThemeToggleBtn .themeToggleInput:checked+svg mask>circle {
+    transform: translate(16px, -3px);
+}
+
+.st-sunMoonThemeToggleBtn .themeToggleInput:checked+svg .sunMoon {
+    transform: scale(0.55);
+}
+
+.st-sunMoonThemeToggleBtn .themeToggleInput:checked+svg .sunRay {
+    animation: showRay1832 0.4s ease 0s 1 forwards;
+}
+
+@keyframes showRay1832 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 nav {
@@ -99,6 +209,7 @@ nav ul li a.active {
     height: 2.8em;
     cursor: pointer;
     z-index: 1300;
+    flex-shrink: 0;
 }
 
 .hamburger input {
@@ -150,6 +261,7 @@ main {
 section {
     padding: 4.25rem 0;
     width: 100%;
+    transition: background-color 0.3s ease;
 }
 
 .section-title {
@@ -158,6 +270,7 @@ section {
     color: #333333;
     margin-bottom: 1.5rem;
     font-weight: 700;
+    transition: color 0.3s ease;
 }
 
 .home {
@@ -168,6 +281,7 @@ section {
     position: relative;
     overflow: hidden;
     background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    transition: background 0.3s ease;
 }
 
 .home::before {
@@ -179,6 +293,7 @@ section {
     left: 0;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e2e8f0" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
     opacity: 0.3;
+    transition: opacity 0.3s ease;
 }
 
 .home-content {
@@ -200,6 +315,7 @@ section {
     margin-bottom: 1.5rem;
     border: 1px solid #e2e8f0;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .home-title {
@@ -223,6 +339,7 @@ section {
     color: #374151;
     margin-bottom: 2rem;
     line-height: 1.6;
+    transition: color 0.3s ease;
 }
 
 .home-actions {
@@ -269,6 +386,7 @@ section {
 
 .about {
     background: #fff;
+    transition: background-color 0.3s ease;
 }
 
 .about-content {
@@ -288,6 +406,7 @@ section {
     color: #6b7280;
     margin-bottom: 0.95rem;
     text-align: justify;
+    transition: color 0.3s ease;
 }
 
 .profile-img {
@@ -297,7 +416,7 @@ section {
     overflow: hidden;
     background: linear-gradient(180deg, #fff, #f7f9ff);
     box-shadow: 0 10px 30px rgba(16, 24, 40, 0.08);
-    transition: transform 0.36s ease, box-shadow 0.36s ease;
+    transition: transform 0.36s ease, box-shadow 0.36s ease, background 0.3s ease;
     flex-shrink: 0;
 }
 
@@ -310,6 +429,7 @@ section {
 
 .skills {
     background: transparent;
+    transition: background-color 0.3s ease;
 }
 
 .skills-category {
@@ -328,7 +448,7 @@ section {
     text-align: center;
     opacity: 0;
     transform: translateY(10px);
-    transition: opacity 0.32s ease, transform 0.32s ease;
+    transition: opacity 0.32s ease, transform 0.32s ease, color 0.3s ease;
 }
 
 .skills.visible .category-title {
@@ -356,7 +476,7 @@ section {
     gap: 0.6rem;
     opacity: 0;
     transform: translateY(10px) scale(0.98);
-    transition: opacity 0.32s ease, transform 0.32s ease;
+    transition: opacity 0.32s ease, transform 0.32s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skills.visible .skill-card {
@@ -408,6 +528,7 @@ section {
     padding: 6px;
     background: linear-gradient(180deg, rgba(52, 152, 219, 0.08), rgba(124, 92, 255, 0.05));
     box-shadow: 0 6px 16px rgba(16, 24, 40, 0.04);
+    transition: background 0.3s ease;
 }
 
 .skill-card p {
@@ -415,10 +536,12 @@ section {
     color: #333333;
     font-weight: 600;
     font-size: 0.95rem;
+    transition: color 0.3s ease;
 }
 
 .projects {
     background: #fff;
+    transition: background-color 0.3s ease;
 }
 
 h4.project {
@@ -427,6 +550,7 @@ h4.project {
     color: #6b7280;
     margin-bottom: 2rem;
     font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .projects-grid {
@@ -444,13 +568,14 @@ h4.project {
     flex-direction: column;
     gap: 0.85rem;
     overflow: hidden;
-    transition: transform 0.22s ease, box-shadow 0.22s ease;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.3s ease;
 }
 
 .project-card h3 {
     margin: 0;
     font-size: 1.05rem;
     color: #333333;
+    transition: color 0.3s ease;
 }
 
 .project-card p {
@@ -458,11 +583,13 @@ h4.project {
     color: #6b7280;
     font-size: 0.95rem;
     line-height: 1.65;
+    transition: color 0.3s ease;
 }
 
 .resume {
     background: transparent;
     text-align: center;
+    transition: background-color 0.3s ease;
 }
 
 .resume-btn {
@@ -480,10 +607,12 @@ h4.project {
 .contact {
     background: #fff;
     padding-block: 3.25rem;
+    transition: background-color 0.3s ease;
 }
 
 .contact .section-title {
     color: #000;
+    transition: color 0.3s ease;
 }
 
 .contact-info {
@@ -500,23 +629,26 @@ h4.project {
     text-align: center;
     box-shadow: 0 6px 18px rgba(16, 24, 40, 0.05);
     backdrop-filter: blur(6px);
-    transition: transform 0.22s ease, box-shadow 0.22s ease;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.3s ease;
 }
 
 .contact-item h3 {
     margin: 0 0 0.5rem 0;
     color: #3498db;
+    transition: color 0.3s ease;
 }
 
 .contact-item a {
     color: #333333;
     text-decoration: none;
     font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 .contact-item p {
     color: #6b7280;
     margin: 0.25rem 0 0 0;
+    transition: color 0.3s ease;
 }
 
 .contact-actions {
@@ -563,6 +695,7 @@ h4.project {
     overflow-y: auto;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     animation: modalFadeIn 0.3s ease forwards;
+    transition: background-color 0.3s ease;
 }
 
 @keyframes modalFadeIn {
@@ -584,6 +717,7 @@ h4.project {
     border-bottom: 1px solid #e0e0e0;
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
+    transition: border-color 0.3s ease;
 }
 
 .close-btn {
@@ -591,12 +725,15 @@ h4.project {
     font-weight: bold;
     cursor: pointer;
     color: #333;
+    transition: color 0.3s ease;
 }
 
 form label {
     display: block;
     margin-top: 10px;
     font-weight: 600;
+    color: #333;
+    transition: color 0.3s ease;
 }
 
 form input,
@@ -606,6 +743,9 @@ form textarea {
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background: #fff;
+    color: #333;
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 form button {
@@ -617,6 +757,7 @@ form button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 form button:hover {
@@ -639,6 +780,7 @@ form button:hover {
     margin-bottom: 1rem;
     border: 1px solid #c3e6cb;
     text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .skill-card:hover img {
@@ -661,6 +803,7 @@ footer {
     padding: 1.25rem;
     border-top: 1px solid rgba(15, 23, 42, 0.03);
     font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 :focus-visible {
@@ -680,10 +823,217 @@ footer {
     transform: none;
 }
 
+[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+[data-theme="dark"] body {
+    background: #0f0f0f;
+    color: #e8e8e8;
+}
+
+[data-theme="dark"] header {
+    background: #161616;
+    border-bottom: 1px solid #2a2a2a;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .name {
+    color: #e8e8e8;
+}
+
+[data-theme="dark"] nav ul li a {
+    color: #e8e8e8;
+}
+
+[data-theme="dark"] nav ul li a:hover {
+    color: #4a9eff;
+}
+
+[data-theme="dark"] nav ul li a.active {
+    color: #4a9eff;
+    background: rgba(74, 158, 255, 0.15);
+}
+
+[data-theme="dark"] .themeToggle {
+    color: #4a9eff;
+}
+
+[data-theme="dark"] .hamburger svg {
+    stroke: #4a9eff;
+}
+
+[data-theme="dark"] .line {
+    stroke: #4a9eff;
+}
+
+[data-theme="dark"] .section-title {
+    color: #e8e8e8;
+}
+
+[data-theme="dark"] .home {
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+}
+
+[data-theme="dark"] .home::before {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid-dark" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%232a2a2a" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid-dark)"/></svg>');
+    opacity: 0.2;
+}
+
+[data-theme="dark"] .home-badge {
+    background: #1a1a1a;
+    color: #b4b4b4;
+    border: 1px solid #2a2a2a;
+}
+
+[data-theme="dark"] .gradient-text {
+    background: linear-gradient(45deg, #4a9eff, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+[data-theme="dark"] .home-subtitle {
+    color: #b4b4b4;
+}
+
+[data-theme="dark"] .btn-secondary {
+    color: #b4b4b4;
+    border-color: #3a3a3a;
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+    background: #1a1a1a;
+    border-color: #4a4a4a;
+}
+
+[data-theme="dark"] .about {
+    background: #1a1a1a;
+}
+
+[data-theme="dark"] .about-text p {
+    color: #b4b4b4;
+}
+
+[data-theme="dark"] .profile-img {
+    background: linear-gradient(180deg, #1a1a1a, #161616);
+}
+
+[data-theme="dark"] .category-title {
+    color: #e8e8e8;
+}
+
+[data-theme="dark"] .skill-card {
+    background: #1a1a1a;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .skill-card img {
+    background: linear-gradient(180deg, rgba(74, 158, 255, 0.15), rgba(124, 92, 255, 0.08));
+}
+
+[data-theme="dark"] .skill-card p {
+    color: #e8e8e8;
+}
+
+[data-theme="dark"] .projects {
+    background: #1a1a1a;
+}
+
+[data-theme="dark"] h4.project {
+    color: #b4b4b4;
+}
+
+[data-theme="dark"] .project-card {
+    background: #161616;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .project-card h3 {
+    color: #e8e8e8;
+}
+
+[data-theme="dark"] .project-card p {
+    color: #b4b4b4;
+}
+
+[data-theme="dark"] .contact {
+    background: #1a1a1a;
+}
+
+[data-theme="dark"] .contact .section-title {
+    color: #e8e8e8;
+}
+
+[data-theme="dark"] .contact-item {
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.8), rgba(22, 22, 22, 0.7));
+}
+
+[data-theme="dark"] .contact-item h3 {
+    color: #4a9eff;
+}
+
+[data-theme="dark"] .contact-item a {
+    color: #e8e8e8;
+}
+
+[data-theme="dark"] .contact-item p {
+    color: #b4b4b4;
+}
+
+[data-theme="dark"] .modal-content {
+    background-color: #1a1a1a;
+}
+
+[data-theme="dark"] .modal-header {
+    border-bottom: 1px solid #2a2a2a;
+}
+
+[data-theme="dark"] .close-btn {
+    color: #e8e8e8;
+}
+
+[data-theme="dark"] form label {
+    color: #e8e8e8;
+}
+
+[data-theme="dark"] form input,
+[data-theme="dark"] form textarea {
+    border: 1px solid #3a3a3a;
+    background: #161616;
+    color: #e8e8e8;
+}
+
+[data-theme="dark"] form input:focus,
+[data-theme="dark"] form textarea:focus {
+    border-color: #4a9eff;
+}
+
+[data-theme="dark"] .success-message {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+[data-theme="dark"] footer {
+    background: #161616;
+    color: #888888;
+    border-top: 1px solid #2a2a2a;
+}
+
+[data-theme="dark"] nav {
+    background: rgba(26, 26, 26, 0.98);
+}
+
 @media (prefers-reduced-motion: reduce) {
-    * {
-        transition: none !important;
-        animation: none !important;
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
 
@@ -696,6 +1046,10 @@ footer {
         font-size: 1.05rem;
     }
 
+    .header-left {
+        gap: 0.8rem;
+    }
+
     nav ul {
         gap: 0.6rem;
     }
@@ -703,10 +1057,15 @@ footer {
 
 @media (max-width: 768px) {
     .header-content {
-        justify-content: space-between;
         padding: 0 12px;
+    }
+
+    .header-left {
+        gap: 0.8rem;
+    }
+
+    .header-right {
         gap: 0.5rem;
-        width: 100%;
     }
 
     .hamburger {
@@ -811,7 +1170,16 @@ nav.active ul li:nth-child(6) {
         gap: 1rem;
     }
 
-    .project-card img {
-        height: 120px;
+    .header-left {
+        gap: 0.6rem;
+    }
+
+    .name {
+        font-size: 1rem;
+    }
+
+    .themeToggle {
+        width: 1.5rem;
+        height: 1.5rem;
     }
 }
