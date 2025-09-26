@@ -76,10 +76,16 @@ header {
     white-space: nowrap;
 }
 
+.theme-toggle-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
 .themeToggle {
     color: #3498db;
-    width: 1.7rem;
-    height: 1.7rem;
+    width: 2.2em;
+    height: 2.2em;
     transition: color 0.3s ease;
     flex-shrink: 0;
 }
@@ -167,6 +173,84 @@ header {
 
     100% {
         transform: scale(1);
+    }
+}
+
+.tip-tooltip {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #3498db;
+    color: white;
+    padding: 0;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    z-index: 1500;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.25);
+    animation: tipPulse 2s ease-in-out infinite;
+}
+
+.tip-tooltip.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+.tip-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+}
+
+.tip-text {
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.tip-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.tip-close:hover {
+    opacity: 1;
+}
+
+.tip-arrow {
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #3498db;
+}
+
+@keyframes tipPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 8px 25px rgba(52, 152, 219, 0.25);
+    }
+
+    50% {
+        box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
     }
 }
 
@@ -859,6 +943,15 @@ footer {
     color: #4a9eff;
 }
 
+[data-theme="dark"] .tip-tooltip {
+    background: #4a9eff;
+    box-shadow: 0 8px 25px rgba(74, 158, 255, 0.3);
+}
+
+[data-theme="dark"] .tip-arrow {
+    border-bottom-color: #4a9eff;
+}
+
 [data-theme="dark"] .hamburger svg {
     stroke: #4a9eff;
 }
@@ -1111,6 +1204,22 @@ footer {
         text-align: right;
     }
 
+    .tip-tooltip {
+        top: calc(100% + 8px);
+        left: -20px;
+        transform: none;
+        font-size: 0.8rem;
+    }
+
+    .tip-tooltip.show {
+        transform: translateY(-3px);
+    }
+
+    .tip-arrow {
+        left: 35px;
+        transform: none;
+    }
+
     .modal-content {
         margin: 10% auto;
         width: 95%;
@@ -1179,7 +1288,16 @@ nav.active ul li:nth-child(6) {
     }
 
     .themeToggle {
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 2em;
+        height: 2em;
+    }
+
+    .tip-tooltip {
+        font-size: 0.75rem;
+        left: -30px;
+    }
+
+    .tip-arrow {
+        left: 40px;
     }
 }

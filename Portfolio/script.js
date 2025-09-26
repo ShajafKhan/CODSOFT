@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var closeBtns = document.querySelectorAll(".close-btn");
     var form = document.getElementById("messageForm");
     var themeToggle = document.getElementById("themeToggle");
+    var darkModeTip = document.getElementById("darkModeTip");
 
     function initTheme() {
         const savedTheme = localStorage.getItem("theme");
@@ -25,12 +26,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.documentElement.setAttribute("data-theme", newTheme);
         localStorage.setItem("theme", newTheme);
+
+        hideDarkModeTip();
     }
 
     function setupThemeToggle() {
         if (themeToggle) {
             themeToggle.addEventListener("change", toggleTheme);
             initTheme();
+        }
+    }
+
+    function showDarkModeTip() {
+        if (darkModeTip) {
+            darkModeTip.classList.add("show");
+
+            setTimeout(function () {
+                hideDarkModeTip();
+            }, 8000);
+        }
+    }
+
+    function hideDarkModeTip() {
+        if (darkModeTip) {
+            darkModeTip.classList.remove("show");
+            localStorage.setItem("darkModeTipSeen", "true");
+        }
+    }
+
+    function setupDarkModeTip() {
+        const tipSeen = localStorage.getItem("darkModeTipSeen");
+
+        if (!tipSeen && darkModeTip) {
+            setTimeout(function () {
+                showDarkModeTip();
+            }, 2000);
+
+            var tipCloseBtn = darkModeTip.querySelector(".tip-close");
+            if (tipCloseBtn) {
+                tipCloseBtn.addEventListener("click", hideDarkModeTip);
+            }
+
+            darkModeTip.addEventListener("click", function (e) {
+                if (e.target === darkModeTip) {
+                    hideDarkModeTip();
+                }
+            });
         }
     }
 
@@ -193,6 +234,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     setupThemeToggle();
+    setupDarkModeTip();
     setupMobileMenu();
     setupForm();
 
@@ -215,8 +257,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape" && modal && modal.classList.contains("show")) {
-            toggleModal(false);
+        if (e.key === "Escape") {
+            if (modal && modal.classList.contains("show")) {
+                toggleModal(false);
+            }
+            if (darkModeTip && darkModeTip.classList.contains("show")) {
+                hideDarkModeTip();
+            }
         }
     });
 
