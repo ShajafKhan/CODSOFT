@@ -9,25 +9,33 @@ document.addEventListener("DOMContentLoaded", function () {
     var darkModeTip = document.getElementById("darkModeTip");
 
     function initTheme() {
-        const savedTheme = localStorage.getItem("theme");
-        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        const theme = savedTheme || (systemDark ? "dark" : "light");
+        try {
+            const savedTheme = localStorage.getItem("theme");
+            const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const theme = savedTheme || (systemDark ? "dark" : "light");
 
-        document.documentElement.setAttribute("data-theme", theme);
+            document.documentElement.setAttribute("data-theme", theme);
 
-        if (themeToggle) {
-            themeToggle.checked = (theme === "dark");
+            if (themeToggle) {
+                themeToggle.checked = (theme === "dark");
+            }
+        } catch (e) {
+            document.documentElement.setAttribute("data-theme", "light");
         }
     }
 
     function toggleTheme() {
-        const currentTheme = document.documentElement.getAttribute("data-theme");
-        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        try {
+            const currentTheme = document.documentElement.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
 
-        document.documentElement.setAttribute("data-theme", newTheme);
-        localStorage.setItem("theme", newTheme);
+            document.documentElement.setAttribute("data-theme", newTheme);
+            localStorage.setItem("theme", newTheme);
 
-        hideDarkModeTip();
+            hideDarkModeTip();
+        } catch (e) {
+
+        }
     }
 
     function setupThemeToggle() {
@@ -38,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function showDarkModeTip() {
-        if (darkModeTip) {
+        if (darkModeTip && !darkModeTip.classList.contains("show")) {
             darkModeTip.classList.add("show");
 
             setTimeout(function () {
@@ -48,30 +56,45 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function hideDarkModeTip() {
-        if (darkModeTip) {
+        if (darkModeTip && darkModeTip.classList.contains("show")) {
             darkModeTip.classList.remove("show");
-            localStorage.setItem("darkModeTipSeen", "true");
+            try {
+                localStorage.setItem("darkModeTipSeen", "true");
+            } catch (e) {
+
+            }
         }
     }
 
     function setupDarkModeTip() {
-        const tipSeen = localStorage.getItem("darkModeTipSeen");
+        try {
+            const tipSeen = localStorage.getItem("darkModeTipSeen");
 
-        if (!tipSeen && darkModeTip) {
-            setTimeout(function () {
-                showDarkModeTip();
-            }, 2000);
+            if (!tipSeen && darkModeTip) {
 
-            var tipCloseBtn = darkModeTip.querySelector(".tip-close");
-            if (tipCloseBtn) {
-                tipCloseBtn.addEventListener("click", hideDarkModeTip);
-            }
+                setTimeout(function () {
+                    showDarkModeTip();
+                }, 2000);
 
-            darkModeTip.addEventListener("click", function (e) {
-                if (e.target === darkModeTip) {
-                    hideDarkModeTip();
+                var tipCloseBtn = darkModeTip.querySelector(".tip-close");
+                if (tipCloseBtn) {
+                    tipCloseBtn.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        hideDarkModeTip();
+                    });
                 }
-            });
+
+                document.addEventListener("click", function (e) {
+                    if (darkModeTip && darkModeTip.classList.contains("show")) {
+                        if (!darkModeTip.contains(e.target) && !themeToggle.contains(e.target)) {
+                            hideDarkModeTip();
+                        }
+                    }
+                });
+            }
+        } catch (e) {
+
         }
     }
 

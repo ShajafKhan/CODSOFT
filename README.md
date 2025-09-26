@@ -18,6 +18,8 @@ A responsive portfolio website showcasing my skills, projects, and contact infor
 [Click here for live preview](https://shajafkhan.github.io/CODSOFT/Portfolio/)
 
 **Features:**
+- Dark/Light Mode Toggle
+- First-Time Visitor Tips
 - Responsive design
 - Contact form with validation
 - Skills showcase
@@ -68,3 +70,16 @@ A functional web calculator with modern design.
 - **CSS3** - Styling, animations, and responsive design
 - **JavaScript** - Interactive functionality and form handling
 - **External Libraries** - FontAwesome icons, Google Fonts
+
+## 📞 Contact & Collaboration
+
+I'm open to **collaborations, internships, and web development projects**!
+
+- **Email:** [khshajaf786@gmail.com](mailto:khshajaf786@gmail.com)
+- **Phone:** [+91 7045890321](tel:+917045890321)
+- **LinkedIn:** [Shajafuddin Khan](https://www.linkedin.com/in/Shajaf-khan-6babb6266/)
+- **GitHub:** [@ShajafKhan](https://github.com/shajafkhan)
+
+---
+
+### ⭐ If you find this repository helpful, please consider giving it a star!

@@ -193,12 +193,14 @@ header {
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     box-shadow: 0 8px 25px rgba(52, 152, 219, 0.25);
     animation: tipPulse 2s ease-in-out infinite;
+    pointer-events: none;
 }
 
 .tip-tooltip.show {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(-5px);
+    pointer-events: auto;
 }
 
 .tip-content {
@@ -224,6 +226,11 @@ header {
     line-height: 1;
     opacity: 0.8;
     transition: opacity 0.2s ease;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .tip-close:hover {
@@ -1128,6 +1135,10 @@ footer {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+
+    .tip-tooltip {
+        animation: none !important;
+    }
 }
 
 @media (max-width: 960px) {
@@ -1209,6 +1220,8 @@ footer {
         left: -20px;
         transform: none;
         font-size: 0.8rem;
+        max-width: 200px;
+        white-space: normal;
     }
 
     .tip-tooltip.show {
@@ -1295,6 +1308,7 @@ nav.active ul li:nth-child(6) {
     .tip-tooltip {
         font-size: 0.75rem;
         left: -30px;
+        max-width: 180px;
     }
 
     .tip-arrow {
