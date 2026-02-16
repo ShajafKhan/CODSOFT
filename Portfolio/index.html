@@ -3,23 +3,56 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="title" content="Shajafuddin Khan - Web Developer & BSc IT Student Portfolio">
+    <meta name="description"
+        content="Portfolio of Shajafuddin Khan, a passionate BSc IT student and web developer specializing in frontend development. Skilled in HTML, CSS, JavaScript, Python, and modern web technologies.">
+    <meta name="keywords"
+        content="Shajafuddin Khan, web developer, frontend developer, BSc IT student, HTML, CSS, JavaScript, Python, web development portfolio, Mumbai developer, India developer">
+    <meta name="author" content="Shajafuddin Fakhruddin Khan">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shajafkhan.github.io/CODSOFT/Portfolio">
+    <meta property="og:title" content="Shajafuddin Khan - Web Developer Portfolio">
+    <meta property="og:description"
+        content="Passionate web developer creating amazing digital experiences with modern technologies. View my projects and get in touch.">
+    <meta property="og:site_name" content="Shajafuddin Khan Portfolio">
+    <link rel="canonical" href="https://shajafkhan.github.io/CODSOFT/Portfolio">
+    <meta name="theme-color" content="#2563EB">
+    <meta name="color-scheme" content="light dark">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
     <header>
         <div class="container header-content">
             <div class="header-left">
-                <div class="name">My Portfolio</div>
+                <h1 class="name">Shajafuddin</h1>
+            </div>
+            <div class="header-right">
+                <nav id="navbar">
+                    <ul>
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#resume">Resume</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
                 <div class="theme-toggle-wrapper">
-                    <label for="themeToggle" class="themeToggle st-sunMoonThemeToggleBtn" type="checkbox"
-                        aria-label="Toggle dark mode">
-                        <input type="checkbox" id="themeToggle" class="themeToggleInput" />
-                        <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" stroke="none">
+                    <label class="st-sunMoonThemeToggleBtn">
+                        <input type="checkbox" class="themeToggleInput" id="themeToggle">
+                        <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" stroke="none"
+                            class="themeToggle">
                             <mask id="moon-mask">
                                 <rect x="0" y="0" width="20" height="20" fill="white"></rect>
                                 <circle cx="11" cy="3" r="8" fill="black"></circle>
@@ -30,22 +63,19 @@
                                 <circle class="sunRay sunRay2" cx="14" cy="16.928" r="1.5"></circle>
                                 <circle class="sunRay sunRay3" cx="6" cy="16.928" r="1.5"></circle>
                                 <circle class="sunRay sunRay4" cx="2" cy="10" r="1.5"></circle>
-                                <circle class="sunRay sunRay5" cx="6" cy="3.1718" r="1.5"></circle>
-                                <circle class="sunRay sunRay6" cx="14" cy="3.1718" r="1.5"></circle>
+                                <circle class="sunRay sunRay5" cx="6" cy="3.072" r="1.5"></circle>
+                                <circle class="sunRay sunRay6" cx="14" cy="3.072" r="1.5"></circle>
                             </g>
                         </svg>
                     </label>
-                    <div id="darkModeTip" class="tip-tooltip">
-                        <div class="tip-content">
-                            <span class="tip-text">Newly added: Dark mode</span>
-                            <button class="tip-close" aria-label="Close tip">&times;</button>
-                        </div>
+                    <div class="tip-tooltip" id="darkModeTip">
                         <div class="tip-arrow"></div>
+                        <div class="tip-content">
+                            <span class="tip-text">Try Dark Mode</span>
+                            <button class="tip-close" aria-label="Close">&times;</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="header-right">
                 <label class="hamburger">
                     <input type="checkbox" id="menu-toggle">
                     <svg viewBox="0 0 32 32">
@@ -55,214 +85,215 @@
                         <path class="line" d="M7 16 27 16"></path>
                     </svg>
                 </label>
-
-                <nav id="navbar">
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#resume">Resume</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
             </div>
         </div>
     </header>
-
     <main>
-        <section id="home" class="home fade-in">
-            <div class="container home-content">
-                <div class="home-badge">Welcome to my portfolio</div>
-                <h1 class="home-title">Hi, I'm <span class="gradient-text">Shajafuddin</span></h1>
-                <p class="home-subtitle">A passionate developer creating amazing web experiences with modern
-                    technologies and clean code.</p>
-                <div class="home-actions">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        <section id="home" class="home">
+            <div class="container">
+                <div class="home-content">
+                    <div class="home-badge">
+                        <span class="badge-indicator"></span>
+                        <span>Welcome to My Portfolio</span>
+                    </div>
+                    <h2 class="home-title">Hi, I'm <span class="gradient-text">Shajafuddin</span></h2>
+                    <p class="home-subtitle">A passionate developer creating amazing web experiences with modern
+                        technologies and clean code.</p>
+                    <div class="home-actions">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Hello! I'm <strong>Shajafuddin Fakhruddin Khan</strong>, a dedicated BSc IT student with a
+                            strong passion for programming and web development.</p>
+                        <p>Continuously expanding skills in programming languages and frameworks through diverse
+                            projects that strengthen problem-solving abilities, driven by curiosity and a commitment to
+                            lifelong learning.</p>
+                        <p>When I'm not coding, I enjoy exploring new technologies, experimenting with UI/UX design
+                            patterns, and contributing to open-source projects.</p>
+                    </div>
+                    <div class="profile-img">
+                        <img src="Assets/Profile.jpg" alt="Profile img">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="skills fade-in" id="skills">
+            <div class="container">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <div class="skills-category">
+                    <h3 class="category-title">Frontend Development</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <img src="Assets/html.png" alt="HTML">
+                            <p>HTML</p>
+                        </div>
+                        <div class="skill-card">
+                            <img src="Assets/css.png" alt="CSS">
+                            <p>CSS</p>
+                        </div>
+                        <div class="skill-card">
+                            <img src="Assets/js.png" alt="JavaScript">
+                            <p>JavaScript</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3 class="category-title">Programming Languages</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <img src="Assets/python.png" alt="Python">
+                            <p>Python</p>
+                        </div>
+                        <div class="skill-card">
+                            <img src="Assets/c.png" alt="C">
+                            <p>C Programming</p>
+                        </div>
+                        <div class="skill-card">
+                            <img src="Assets/cpp.png" alt="C++">
+                            <p>C++ Programming</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3 class="category-title">Development Tools</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <img src="Assets/git.png" alt="Git">
+                            <p>Git</p>
+                        </div>
+                        <div class="skill-card">
+                            <img src="Assets/vs_code.png" alt="VS Code">
+                            <p>VS Code</p>
+                        </div>
+                        <div class="skill-card">
+                            <img src="Assets/github.png" alt="GitHub">
+                            <p>GitHub</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="projects fade-in">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <p class="section-subtitle">Here are some of the projects I've worked on recently. You can check them
+                    out on my
+                    GitHub.</p>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Responsive Birthday Card</h3>
+                        <p>A fun birthday card with confetti, balloons, themes, name by link, and a party sound—great on
+                            phones.</p>
+                        <div class="project-tags">
+                            <span class="tag"><a href="https://github.com/ShajafKhan/Responsive-Birthday-Card"> View
+                                    Project</a></span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Countdown Web App</h3>
+                        <p>A simple countdown that reads the name, end date, and where to go next, then shows a button
+                            at
+                            zero.</p>
+                        <div class="project-tags">
+                            <span class="tag"><a href="https://github.com/ShajafKhan/Countdown"> View Project</a></span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>URL Generator</h3>
+                        <p>Make shareable links for the countdown and card, checks the date, and can shorten with
+                            TinyURL.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag"><a href="https://github.com/ShajafKhan/Url-Generator"> View
+                                    Project</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="resume" class="resume fade-in">
+            <div class="container">
+                <h2 class="section-title">Resume</h2>
+                <div class="resume-content">
+                    <div class="resume-action">
+                        <p class="resume-description">Download my complete resume to learn more about my background,
+                            technical skills, education, and professional experience.</p>
+                        <a href="Assets/Resume.pdf" download class="resume-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Download Resume [PDF]
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="contact fade-in">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <a href="mailto:khshajaf786@gmail.com">khshajaf786@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Github</h3>
+                        <a href="https://github.com/shajafkhan" target="_blank">github.com/shajafkhan</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Linkedin</h3>
+                        <a href="https://www.linkedin.com/in/Shajaf-khan-6babb6266/"
+                            target="_blank">linkedin.com/in/shajafkhan</a>
+                    </div>
+                </div>
+                <div class="contact-actions">
+                    <button class="btn btn-primary send-message-btn" id="sendMessageBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                        Send Message
+                    </button>
                 </div>
             </div>
         </section>
     </main>
-
-    <section id="about" class="about fade-in">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Hello! I'm Shajafuddin Fakhruddin Khan, a dedicated BSc IT student with a strong passion for
-                        programming and web development...</p>
-                    <p>Currently, I'm expanding my knowledge in various programming languages and working on different
-                        projects...</p>
-                    <p>When I'm not coding, I enjoy exploring new technologies...</p>
-                </div>
-                <div class="profile-img">
-                    <img src="Assets/Profile.jpg" alt="Shajafuddin Fakhruddin Khan">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="skills fade-in">
-        <div class="container">
-            <h2 class="section-title">My Skills</h2>
-
-            <div class="skills-category">
-                <h3 class="category-title">Web Technologies</h3>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <img src="Assets/HTML.png" alt="HTML">
-                        <p>HTML</p>
-                    </div>
-                    <div class="skill-card">
-                        <img src="Assets/Css.png" alt="CSS">
-                        <p>CSS</p>
-                    </div>
-                    <div class="skill-card">
-                        <img src="Assets/JS.png" alt="JavaScript">
-                        <p>JavaScript</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skills-category">
-                <h3 class="category-title">Programming Languages</h3>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <img src="Assets/Python.png" alt="Python">
-                        <p>Python</p>
-                    </div>
-                    <div class="skill-card">
-                        <img src="Assets/C.svg" alt="C">
-                        <p>C Programming</p>
-                    </div>
-                    <div class="skill-card">
-                        <img src="Assets/Cpp.svg" alt="C++">
-                        <p>C++ Programming</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skills-category">
-                <h3 class="category-title">Tools</h3>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <img src="Assets/Git.png" alt="Git">
-                        <p>Git</p>
-                    </div>
-                    <div class="skill-card">
-                        <img src="Assets/VS_Code.png" alt="VS Code">
-                        <p>VS Code</p>
-                    </div>
-                    <div class="skill-card">
-                        <img src="Assets/Github.png" alt="GitHub">
-                        <p>GitHub</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects fade-in">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <h4 class="project">Here are some of the projects I've worked on recently. You can check them out on my
-                GitHub.</h4>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Responsive Birthday Card</h3>
-                    <p>A fun birthday card with confetti, balloons, themes, name by link, and a party sound—great on
-                        phones.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Countdown Web App</h3>
-                    <p>A simple countdown that reads the name, end date, and where to go next, then shows a button at
-                        zero.</p>
-                </div>
-                <div class="project-card">
-                    <h3>URL Generator</h3>
-                    <p>Make shareable links for the countdown and card, checks the date, and can shorten with TinyURL.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="resume" class="resume fade-in">
-        <div class="container">
-            <h2 class="section-title">Resume</h2>
-            <p>Download my resume to learn more about my background, education, and experience.</p>
-            <br>
-            <a href="Assets/Resume.pdf" class="resume-btn" download>Download Resume (PDF)</a>
-        </div>
-    </section>
-
-    <section id="contact" class="contact fade-in">
-        <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h3>Email</h3>
-                    <a href="mailto:khshajaf786@gmail.com">khshajaf786@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <h3>Phone</h3>
-                    <a href="tel:+917045890321">+91 7045890321</a>
-                </div>
-                <div class="contact-item">
-                    <h3>GitHub</h3>
-                    <a href="https://github.com/shajafkhan" target="_blank">github.com/shajafkhan</a>
-                </div>
-                <div class="contact-item">
-                    <h3>LinkedIn</h3>
-                    <a href="https://www.linkedin.com/in/Shajaf-khan-6babb6266/"
-                        target="_blank">linkedin.com/in/shajafkhan</a>
-                </div>
-            </div>
-            <div class="contact-actions">
-                <button id="sendMessageBtn" class="btn btn-primary send-message-btn">Send a Message</button>
-            </div>
-        </div>
-    </section>
-
-    <div id="messageModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Send Me a Message</h3>
-                <span class="close-btn">&times;</span>
-            </div>
-            <form action="https://formspree.io/f/mqadnvro" method="POST" id="messageForm" class="message-form">
-                <input type="hidden" name="access_key" value="553a4f48-8eec-4eff-b653-f0ce10379305">
-
-                <div class="form-group">
-                    <label for="Name">Name *</label>
-                    <input type="text" id="Name" name="Name" required>
-                    <span class="error-message" id="nameError"></span>
-                </div>
-
-                <div class="form-group">
-                    <label for="Contact">Email or Mobile Number *</label>
-                    <input type="text" id="Contact" name="Contact" required>
-                    <span class="error-message" id="contactError"></span>
-                </div>
-
-                <div class="form-group">
-                    <label for="Message">Message *</label>
-                    <textarea id="Message" name="Message" rows="5" required></textarea>
-                    <span class="error-message" id="messageError"></span>
-                </div>
-
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-primary send-message-btn">Send</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
     <footer>
         <small>&copy; 2025 Shajafuddin Fakhruddin Khan. All rights reserved.</small>
     </footer>
-
+    <div class="modal" id="messageModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Send a Message</h2>
+                <span class="close-btn">&times;</span>
+            </div>
+            <form id="messageForm" action="https://formspree.io/f/mqadnvro" method="POST" class="message-form">
+                <input type="hidden" name="access_key" value="553a4f48-8eec-4eff-b653-f0ce10379305">
+                <label for="Name">Name</label>
+                <input type="text" id="Name" name="Name" required>
+                <span class="error-message" id="nameError"></span>
+                <label for="Contact">Email or Mobile</label>
+                <input type="text" id="Contact" name="Contact" required>
+                <span class="error-message" id="contactError"></span>
+                <label for="Message">Message</label>
+                <textarea id="Message" name="Message" rows="5" required></textarea>
+                <span class="error-message" id="messageError"></span>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 
