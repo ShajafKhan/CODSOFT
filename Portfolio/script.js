@@ -15,6 +15,23 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("messageForm");
     const themeToggle = document.getElementById("themeToggle");
     const darkModeTip = document.getElementById("darkModeTip");
+    function setupSmoothScroll() {
+        document.addEventListener("click", function (e) {
+            const link = e.target.closest('a[href^="#"]');
+            if (!link) return;
+
+            const targetId = link.getAttribute("href").substring(1);
+            const target = document.getElementById(targetId);
+
+            if (!target) return;
+
+            e.preventDefault(); // stop hash from appearing
+
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+        });
+    }
 
     function initTheme() {
         try {
@@ -416,6 +433,7 @@ document.addEventListener("DOMContentLoaded", function () {
         setupThemeToggle();
         setupDarkModeTip();
         setupMobileMenu();
+        setupSmoothScroll();
         setupForm();
         setupEventListeners();
         document.body.classList.add("loaded");

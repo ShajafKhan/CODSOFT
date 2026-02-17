@@ -1619,6 +1619,10 @@ footer {
         transition-delay: 0.25s;
     }
 
+    nav.active ul li:nth-child(6) {
+        transition-delay: 0.3s;
+    }
+
     .tip-tooltip {
         top: calc(100% + 8px);
         left: auto;
